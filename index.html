@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>公路建造产业化信息中心</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/default.css">-->
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<!--背景音乐    loop="loop" autoplay="autoplay"   -->
+<audio class="backgroud-audio" src="audio/backgroud.mp3" loop="loop" autoplay="autoplay"></audio>
+
+<audio class="click-audio" src="audio/pi.mp3"></audio>
+<!--黑色遮罩层-->
+<div class="showblack" style="display:none;"></div>
+<!-- 视频弹出开始 -->
+<div class="indexpop">
+    <div class="indexvideo">
+        <a href="javascript:;" class="close"></a>
+        <div class="indexsp"></div>
+    </div>
+</div>
+<!-- 视频弹出结束 -->
+<div id="particles-js"></div>
+
+<div class="mian-frame">
+    <img src="images/nav-top.png" width="100%"/>
+    <div class="gong-txts">公路建造产业化信息中心</div>
+</div>
+
+<div class="mian-tankuang vButton" style="display:none;">
+    <div class="kuangicon">
+        <div class="yuan01"><img src="images/yuansu01.png"/></div>
+        <div class="yuan02"><img src="images/yuansu03.png"/></div>
+        <div class="yuan03"><img src="images/yuansu11.png"/></div>
+        <div class="yuan04"><img src="images/yuansu10.png"/></div>
+        <div class="yuan05"><img src="images/yuansu04.png"/></div>
+        <div class="yuan06"><img src="images/yuansu12.png"/></div>
+        <div class="yuan07"><img src="images/yuansu05.png"/></div>
+        <div class="yuan08"><img src="images/yuansu13.png"/></div>
+        <div class="yuan09"><img src="images/yuansu06.png"/></div>
+        <div class="yuan10"><img src="images/yuansu07.png"/></div>
+        <div class="back-ground back-ground1 clearfix">
+            <ul>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">工点信息</p>
+                        <div class=""></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">工艺工法</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">质量管控</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">工点信息</p>
+                        <div class=""></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">工艺工法</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">质量管控</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--三级菜单-->
+        <div class="back-ground back-ground2 clearfix" style="display:none;">
+            <ul>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">应用平台</p>
+                        <div class=""></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">工艺工法</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">质量管控</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">工点信息</p>
+                        <div class=""></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">工艺工法</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cicle-posiab">
+                        <p class="gong-txt">质量管控</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="mian-tankuang vVideo">
+    <div class="kuangicon">
+        <div class="yuan01"><img src="images/yuansu01.png"/></div>
+        <div class="yuan02"><img src="images/yuansu03.png"/></div>
+        <div class="yuan03"><img src="images/yuansu11.png"/></div>
+        <div class="yuan04"><img src="images/yuansu10.png"/></div>
+        <div class="yuan05"><img src="images/yuansu04.png"/></div>
+        <div class="yuan06"><img src="images/yuansu12.png"/></div>
+        <div class="yuan07"><img src="images/yuansu05.png"/></div>
+        <div class="yuan08"><img src="images/yuansu13.png"/></div>
+        <div class="yuan09"><img src="images/yuansu06.png"/></div>
+        <div class="yuan10"><img src="images/yuansu07.png"/></div>
+        <div class="back-ground video-play fonttxts clearfix">
+            <ul>
+                <li>
+                    <!--<div class="btn-playvideo">
+                        <img src="images/videos.png"/>
+                    </div>-->
+                    <p>公路建造</p>
+                    <video class="videok" controls>
+                        <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                    </video>
+                </li>
+                <li>
+                    <!--<div class="btn-playvideo">
+                        <img src="images/videos.png"/>
+                    </div>-->
+                    <p>公路建造</p>
+                    <video class="videok" controls>
+                        <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                    </video>
+                </li>
+                <li>
+                    <!--<div class="btn-playvideo">
+                        <img src="images/videos.png"/>
+                    </div>-->
+                    <p>公路建造</p>
+                    <video class="videok" controls>
+                        <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                    </video>
+                </li>
+                <li>
+                    <!--<div class="btn-playvideo">
+                        <img src="images/videos.png"/>
+                    </div>-->
+                    <p>公路建造</p>
+                    <video class="videok" controls>
+                        <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                    </video>
+                </li>
+                <li>
+                    <!--<div class="btn-playvideo">
+                        <img src="images/videos.png"/>
+                    </div>-->
+                    <p>公路建造</p>
+                    <video class="videok" controls>
+                        <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                    </video>
+                </li>
+                <li>
+                    <!--<div class="btn-playvideo">
+                        <img src="images/videos.png"/>
+                    </div>-->
+                    <p>公路建造</p>
+                    <video class="videok" controls>
+                        <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                    </video>
+                </li>
+                <li>
+                    <!--<div class="btn-playvideo">
+                        <img src="images/videos.png"/>
+                    </div>-->
+                    <p>公路建造</p>
+                    <video class="videok" controls>
+                        <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                    </video>
+                </li>
+                <li>
+                    <!--<div class="btn-playvideo">
+                        <img src="images/videos.png"/>
+                    </div>-->
+                    <p>公路建造</p>
+                    <video class="videok" controls>
+                        <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                    </video>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <script>
+
+        //				function videoPlay(btn){
+        //					btn.hide();
+        //					btn.parent().next()[0].play();
+        //					btn.parent().next().controls = true;
+        //				}
+        //				$(".btn-playvideo img").click(function() {
+        //					$(this).parent().next()[0].play();
+        //					document.getElementById("myVideo"+$(this).attr('tag')).controls = true;
+        //				})
+        //
+        //				$(".videok").addEventListener('play', function() {
+        //					$(this).prev().children("img").hide();
+        //				});
+        //				$(".videok").addEventListener('pause', function() {
+        //					document.getElementById("myVideo").controls = true;
+        //					$(this).prev().children("img").hide();
+        //				});
+        //				$(".videok").addEventListener("ended", function() {
+        //					document.getElementById("myVideo"+$(this).attr('tag')).controls = false ;
+        //					$(this).prev().children("img").show();
+        //				});
+
+
+    </script>
+</div>
+
+<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+<!--最底部-->
+<div class="nav-bottom">
+    <!--扇形-->
+    <div class="faguang-bots"><img src="images/topss2.png" width="100%"/></div>
+    <!--20180417 变更 增加ID-->
+    <div class="main-shan clearfix" id="mainShan">
+        <ul>
+            <!--20180417 变更 增加ID-->
+            <li id="firstMainShanLi">
+                <div class="kuang01"><img src="images/kuang01.png"/>
+                    <div class="gongyi-txt gong01">
+                        <img src="images/blue01.png"/>
+                        <p class="txt-transform1">工艺演示</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="kuang02"><img src="images/kuang02.png"/>
+                    <div class="gongyi-txt gong02">
+                        <img src="images/blue02.png"/>
+                        <p class="txt-transform2">应用平台</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="kuang03"><img src="images/kuang03.png"/>
+                    <div class="gongyi-txt gong03">
+                        <img src="images/blue03.png"/>
+                        <p class="txt-transform3">北塔工点</p>
+                    </div>
+                </div>
+
+            </li>
+            <li>
+                <div class="kuang04"><img src="images/kuang04.png"/>
+                    <div class="gongyi-txt gong04">
+                        <img src="images/blue04.png"/>
+                        <p class="txt-transform4">锚碇工点</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="kuang05"><img src="images/kuang05.png"/>
+                    <div class="gongyi-txt gong05">
+                        <img src="images/blue05.png" style="margin-top: -1%;"/>
+                        <p class="txt-transform5">预制场工点</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="kuang06"><img src="images/kuang06.png"/>
+                    <div class="gongyi-txt gong06">
+                        <img src="images/blue06.png"/>
+                        <p class="txt-transform6">动态监测</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="kuang07"><img src="images/kuang07.png"/>
+                    <div class="gongyi-txt gong07">
+                        <img src="images/blue07.png" style="margin-top: -1%;"/>
+                        <p class="txt-transform7">系统介绍</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div style="position:relative;">
+        <img src="images/nav-bottom.png" width="100%"/>
+        <!--20180417 变更 start-->
+        <div class="click-hover">
+            <div class="chi-box">
+                <div class="chi-ibox"></div>
+            </div>
+        </div>
+        <!--20180417 变更 end-->
+        <div class="wenzhou-txt">温州瓯江北口大桥</div>
+    </div>
+
+    <script>
+
+        //20180417 变更 start
+        $(window).on("load", function () {
+            //控制菜单高度
+            var $mainShan = $('#mainShan'),
+                $firstMainShanLi = $('#firstMainShanLi'),
+                $mainShanLis = $mainShan.find('>ul>li');
+            $mainShan.css({
+                "height": $firstMainShanLi.css('height')
+            })
+            $mainShanLis.each(function () {
+                var width = $(this).width(),
+                    height = $(this).height();
+                $(this).css({
+                    "width": width,
+                    "height": height
+                })
+            })
+            setTimeout(function () {
+                $mainShan.addClass('opened-nav');
+            },300)
+        })
+        //20180417 变更 end
+
+        $(".cicle-posiab").hover(function () {
+            $(this).addClass("img-hover");
+            $(this).find(".gong-txt").addClass("txt-hover")
+            $(this).find(".gong-txt").css("color", "#fff")
+        }, function () {
+            $(this).removeClass("select-hover");
+            $(this).removeClass("img-hover");
+            $(this).find(".gong-txt").removeClass("txt-hover")
+            $(this).find(".gong-txt").css("color", "")
+        })
+        $(".cicle-posiab").click(function () {
+            $(".back-ground1").toggle();
+            $(".back-ground2").toggle();
+            $(".click-audio")[0].play();
+            $(".cicle-posiab").animate({left: '2000px'}, 500);
+            $(".cicle-posiab").animate({left: '-2000px'}, 800);
+            $(".cicle-posiab").animate({left: '0px'}, 100);
+        })
+        $(".cicle-posiab").mousedown(function (event) { //获取鼠标按下的位置
+            $(this).removeClass("img-hover");
+            $(this).find(".gong-txt").removeClass("txt-hover")
+            $(this).addClass("select-hover");
+        });
+        $(".cicle-posiab").mouseup(function (event) {//鼠标释放
+            $(this).addClass("img-hover");
+            $(this).find(".gong-txt").addClass("txt-hover")
+            $(this).removeClass("select-hover");
+        })
+
+
+        $(".backgroud-audio")[0].play();
+        //
+        $(".kuang01").hover(function () {
+            $(this).find("img").first().attr("src", "images/kuang-hover01.png");
+            $(this).find("img").last().attr("src", "images/wirte01.png");
+            $(this).find(".gongyi-txt").css("color", "#fff");
+        }, function () {
+            $(this).find("img").first().attr("src", "images/kuang01.png");
+            $(this).find("img").last().attr("src", "images/blue01.png");
+            $(this).find(".gongyi-txt").css("color", "");
+        })
+        $(".kuang02").hover(function () {
+            $(this).find("img").first().attr("src", "images/kuang-hover02.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover01_2.png");
+            $(this).find("img").last().attr("src", "images/wirte02.png");
+            $(this).find(".gongyi-txt").css("color", "#fff");
+        }, function () {
+            $(this).find("img").first().attr("src", "images/kuang02.png")
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang01.png");
+            $(this).find("img").last().attr("src", "images/blue02.png");
+            $(this).find(".gongyi-txt").css("color", "");
+        })
+        $(".kuang03").hover(function () {
+            $(this).find("img").first().attr("src", "images/kuang-hover03.png")
+            $(this).find("img").last().attr("src", "images/wirte03.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover02_2.png");
+            $(this).find(".gongyi-txt").css("color", "#fff");
+        }, function () {
+            $(this).find("img").first().attr("src", "images/kuang03.png")
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang02.png");
+            $(this).find("img").last().attr("src", "images/blue03.png");
+            $(this).find(".gongyi-txt").css("color", "");
+        })
+        $(".kuang04").hover(function () {
+            $(this).find("img").first().attr("src", "images/kuang-hover04.png")
+            $(this).find("img").last().attr("src", "images/wirte04.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover03_2.png");
+            $(this).find(".gongyi-txt").css("color", "#fff");
+        }, function () {
+            $(this).find("img").first().attr("src", "images/kuang04.png")
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang03.png");
+            $(this).find("img").last().attr("src", "images/blue04.png");
+            $(this).find(".gongyi-txt").css("color", "");
+        })
+        $(".kuang05").hover(function () {
+            $(this).find("img").first().attr("src", "images/kuang-hover05.png")
+            $(this).find("img").last().attr("src", "images/wirte05.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover04_2.png");
+            $(this).find(".gongyi-txt").css("color", "#fff");
+        }, function () {
+            $(this).find("img").first().attr("src", "images/kuang05.png")
+            $(this).find("img").last().attr("src", "images/blue05.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang04.png");
+            $(this).find(".gongyi-txt").css("color", "");
+        })
+        $(".kuang06").hover(function () {
+            $(this).find("img").first().attr("src", "images/kuang-hover06.png");
+            $(this).find("img").last().attr("src", "images/wirte06.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover05_2.png");
+            $(this).find(".gongyi-txt").css("color", "#fff");
+        }, function () {
+            $(this).find("img").first().attr("src", "images/kuang06.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang05.png");
+            $(this).find(".gongyi-txt").css("color", "");
+            $(this).find("img").last().attr("src", "images/blue06.png");
+        })
+        $(".kuang07").hover(function () {
+            $(this).find("img").first().attr("src", "images/kuang-hover07.png");
+            $(this).find("img").last().attr("src", "images/wirte07.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover06_2.png");
+            $(this).find(".gongyi-txt").css("color", "#fff");
+        }, function () {
+            $(this).find("img").first().attr("src", "images/kuang07.png");
+            $(this).parent().prev().find("img").first().attr("src", "images/kuang06.png");
+            $(this).find("img").last().attr("src", "images/blue07.png");
+            $(this).find(".gongyi-txt").css("color", "");
+        })
+    </script>
+
+
+    <script>
+    //20180417 变更 start
+    var initRotate = 0;
+    $(".click-hover").click(function () {
+        initRotate += 90;
+        $(this).find('.chi-ibox').css({
+            transform: "rotate("+initRotate+"deg)"
+        })
+        $(".click-audio")[0].play();
+        if ($(".main-shan").hasClass('opened-nav')) {
+            $(".main-shan").removeClass("opened-nav");
+            $(".faguang-bots").fadeOut(1200);
+        } else {
+            $(".main-shan").addClass("opened-nav");
+            $(".faguang-bots").fadeIn(1200);
+        }
+    })
+    //20180417 变更 end
+
+    $(".kuang01").click(function () {
+        $(".click-audio")[0].play();
+        $(".vButton").fadeIn()
+        $(".vVideo").fadeOut()
+    })
+    $(".kuang02").click(function () {
+        $(".click-audio")[0].play();
+        $(".vVideo").fadeIn()
+        $(".vButton").fadeOut()
+    })
+    </script>
+</div>
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+</html>
