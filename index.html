@@ -13,9 +13,8 @@
 
 <div id="bodyScaleDoms">
     <!--背景音乐    loop="loop" autoplay="autoplay"   -->
-    <audio class="backgroud-audio" src="audio/backgroud.mp3" loop="loop" autoplay="autoplay"></audio>
-
-    <audio class="click-audio" src="audio/pi.mp3"></audio>
+    <audio class="backgroud-audio" id="backgroundAudio" src="audio/backgroud.mp3" loop="loop" autoplay="autoplay"></audio>
+    <audio class="click-audio" id="clickAudio" src="audio/pi.mp3"></audio>
     <!--黑色遮罩层-->
     <div class="showblack" style="display:none;"></div>
     <!-- 视频弹出开始 -->
@@ -314,7 +313,7 @@
     <div style="position:relative;">
         <img src="images/nav-bottom.png" width="100%"/>
         <!--20180417 变更 start-->
-        <div class="click-hover">
+        <div class="click-hover" id="clickHover">
             <div class="chi-box">
                 <div class="chi-ibox"></div>
             </div>

@@ -12,7 +12,7 @@ $(function () {
 
     //20180417 变更 start
     var initRotate = 0;
-    $(".click-hover").click(function () {
+    $("#clickHover").click(function () {
         initRotate += 90;
         $(this).find('.chi-ibox').css({
             transform: "rotate(" + initRotate + "deg)"

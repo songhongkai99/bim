@@ -18,7 +18,7 @@ html, body {
 }
 /*公用样式*/
 body {
-    font-family: "微软雅黑", Arial, Verdana, Helvetica, sans-serif;
+    font-family: "Microsoft YaHei", Arial, Verdana, Helvetica, sans-serif;
     color: #666;
     font-size: 12px;
     text-align: left;
@@ -158,7 +158,7 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
-    background: url(../webimages/show-bg-t.png);
+    /*background: url(../webimages/show-bg-t.png);*/
     z-index: 500;
 }
 .indexvideo {
