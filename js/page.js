@@ -1,5 +1,34 @@
 $(function () {
 
+    var $clickAudio = $("#clickAudio"),
+        $vIframeBox = $("#vIframeBox"),
+        $mianTankuang = $(".mian-tankuang");
+
+    $mianTankuang.addClass("hidden");
+
+    $(".js-open-iframe").on("click", function (e) {
+        e.stopPropagation();
+        $clickAudio[0].play();
+        var data = $(this).data(),
+            $openId = $('#' + data.openId);
+        $mianTankuang.not("#vIframeBox").removeClass("vis-show");
+        $("#vIframeBox").addClass("visible vis-show");
+        if(!data.hasRendered){
+            $(this).data('hasRendered', true);
+            $openId.attr("src", data.link);
+        }
+        $("#popupFrames").find(">iframe").not($openId).removeClass("vis-show")
+        $openId.addClass('vis-show');
+    })
+
+    $(".js-open-tankuang").on("click", function (e) {
+        e.stopPropagation();
+        $clickAudio[0].play();
+        var data = $(this).data();
+        $mianTankuang.not("#" + data.openId).removeClass("vis-show");
+        $("#" + data.openId).addClass("visible vis-show");
+    })
+
     function controlPageScale() {
         var scaleRate = $(window).width() / 1920;
         $("#navBottom, #bodyScaleDoms").css("transform", 'scale(' + scaleRate + ')');
@@ -21,24 +50,14 @@ $(function () {
         if ($(".main-shan").hasClass('opened-nav')) {
             $(".main-shan").removeClass("opened-nav");
             $(".faguang-bots").fadeOut(1200);
+            $(".mian-tankuang.vis-show").find('.back-ground').css("height","600px")
         } else {
             $(".main-shan").addClass("opened-nav");
             $(".faguang-bots").fadeIn(1200);
+            $(".mian-tankuang.vis-show").find('.back-ground').removeAttr("style")
         }
     })
     //20180417 变更 end
-
-    $(".kuang01").click(function () {
-        $(".click-audio")[0].play();
-        $(".vButton").fadeIn()
-        $(".vVideo").fadeOut()
-    })
-    $(".kuang02").click(function () {
-        $(".click-audio")[0].play();
-        $(".vVideo").fadeIn()
-        $(".vButton").fadeOut()
-    })
-
 
     //20180417 变更 start
     $(window).on("load", function () {
@@ -61,7 +80,7 @@ $(function () {
             $mainShan.addClass('opened-nav');
         }, 300)
     })
-//20180417 变更 end
+    //20180417 变更 end
 
     $(".cicle-posiab").hover(function () {
         $(this).addClass("img-hover");

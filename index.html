@@ -6,9 +6,7 @@
     <title>公路建造产业化信息中心</title>
     <!--<link rel="stylesheet" type="text/css" href="css/default.css">-->
     <link rel="stylesheet" media="screen" href="css/style.css">
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 </head>
-
 <body id="domBody">
 
 <div id="bodyScaleDoms">
@@ -32,7 +30,29 @@
         <div class="gong-txts">公路建造产业化信息中心</div>
     </div>
 
-    <div class="mian-tankuang vButton" style="display:none;">
+    <!--公共内嵌窗口 start-->
+    <div class="mian-tankuang vIframe vis-hide" id="vIframeBox">
+        <div class="kuangicon">
+            <div class="yuan01"><img src="images/yuansu01.png"/></div>
+            <div class="yuan02"><img src="images/yuansu03.png"/></div>
+            <div class="yuan03"><img src="images/yuansu11.png"/></div>
+            <div class="yuan04"><img src="images/yuansu10.png"/></div>
+            <div class="yuan05"><img src="images/yuansu04.png"/></div>
+            <div class="yuan06"><img src="images/yuansu12.png"/></div>
+            <div class="yuan07"><img src="images/yuansu05.png"/></div>
+            <div class="yuan08"><img src="images/yuansu13.png"/></div>
+            <div class="yuan09"><img src="images/yuansu06.png"/></div>
+            <div class="yuan10"><img src="images/yuansu07.png"/></div>
+            <div id="popupFrames" class="back-ground">
+                <iframe class="vis-hide" id="frame1" src="" frameborder="0" allowtransparency="true"></iframe>
+                <iframe class="vis-hide" id="frame2" src="" frameborder="0" allowtransparency="true"></iframe>
+                <iframe class="vis-hide" id="frame3" src="" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--公共内嵌窗口 end-->
+
+    <div class="mian-tankuang vButton vis-hide" id="vButtonBox">
         <div class="kuangicon">
             <div class="yuan01"><img src="images/yuansu01.png"/></div>
             <div class="yuan02"><img src="images/yuansu03.png"/></div>
@@ -122,7 +142,7 @@
 
     </div>
 
-    <div class="mian-tankuang vVideo">
+    <div class="mian-tankuang vVideo vis-hide" id="vVideoBox">
         <div class="kuangicon">
             <div class="yuan01"><img src="images/yuansu01.png"/></div>
             <div class="yuan02"><img src="images/yuansu03.png"/></div>
@@ -142,7 +162,7 @@
                         </div>-->
                         <p>公路建造</p>
                         <video class="videok" controls>
-                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                            <source src="./video/movie.ogg" type="video/mp4">
                         </video>
                     </li>
                     <li>
@@ -151,7 +171,7 @@
                         </div>-->
                         <p>公路建造</p>
                         <video class="videok" controls>
-                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                            <source src="./video/movie.ogg" type="video/mp4">
                         </video>
                     </li>
                     <li>
@@ -160,7 +180,7 @@
                         </div>-->
                         <p>公路建造</p>
                         <video class="videok" controls>
-                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                            <source src="./video/movie.ogg" type="video/mp4">
                         </video>
                     </li>
                     <li>
@@ -169,7 +189,7 @@
                         </div>-->
                         <p>公路建造</p>
                         <video class="videok" controls>
-                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                            <source src="./video/movie.ogg" type="video/mp4">
                         </video>
                     </li>
                     <li>
@@ -178,7 +198,7 @@
                         </div>-->
                         <p>公路建造</p>
                         <video class="videok" controls>
-                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                            <source src="./video/movie.ogg" type="video/mp4">
                         </video>
                     </li>
                     <li>
@@ -187,7 +207,7 @@
                         </div>-->
                         <p>公路建造</p>
                         <video class="videok" controls>
-                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                            <source src="./video/movie.ogg" type="video/mp4">
                         </video>
                     </li>
                     <li>
@@ -196,7 +216,7 @@
                         </div>-->
                         <p>公路建造</p>
                         <video class="videok" controls>
-                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                            <source src="./video/movie.ogg" type="video/mp4">
                         </video>
                     </li>
                     <li>
@@ -205,7 +225,7 @@
                         </div>-->
                         <p>公路建造</p>
                         <video class="videok" controls>
-                            <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/mp4">
+                            <source src="./video/movie.ogg" type="video/mp4">
                         </video>
                     </li>
 
@@ -251,7 +271,8 @@
         <ul>
             <!--20180417 变更 增加ID-->
             <li id="firstMainShanLi">
-                <div class="kuang01"><img src="images/kuang01.png"/>
+                <div class="kuang01 js-open-tankuang" data-open-level="2" data-open-id="vButtonBox">
+                    <img src="images/kuang01.png"/>
                     <div class="gongyi-txt gong01">
                         <img src="images/blue01.png"/>
                         <p class="txt-transform1">工艺演示</p>
@@ -259,7 +280,8 @@
                 </div>
             </li>
             <li>
-                <div class="kuang02"><img src="images/kuang02.png"/>
+                <div class="kuang02 js-open-tankuang" data-open-level="2" data-open-id="vVideoBox">
+                    <img src="images/kuang02.png"/>
                     <div class="gongyi-txt gong02">
                         <img src="images/blue02.png"/>
                         <p class="txt-transform2">应用平台</p>
@@ -267,7 +289,8 @@
                 </div>
             </li>
             <li>
-                <div class="kuang03"><img src="images/kuang03.png"/>
+                <div class="kuang03">
+                    <img src="images/kuang03.png"/>
                     <div class="gongyi-txt gong03">
                         <img src="images/blue03.png"/>
                         <p class="txt-transform3">北塔工点</p>
@@ -276,7 +299,8 @@
 
             </li>
             <li>
-                <div class="kuang04"><img src="images/kuang04.png"/>
+                <div class="kuang04">
+                    <img src="images/kuang04.png"/>
                     <div class="gongyi-txt gong04">
                         <img src="images/blue04.png"/>
                         <p class="txt-transform4">锚碇工点</p>
@@ -284,7 +308,9 @@
                 </div>
             </li>
             <li>
-                <div class="kuang05"><img src="images/kuang05.png"/>
+                <div class="kuang05 js-open-iframe" data-open-level="2" data-open-id="frame3"
+                     data-link="./assets/html3.html">
+                    <img src="images/kuang05.png"/>
                     <div class="gongyi-txt gong05">
                         <img src="images/blue05.png" style="margin-top: -1%;"/>
                         <p class="txt-transform5">预制场工点</p>
@@ -292,7 +318,9 @@
                 </div>
             </li>
             <li>
-                <div class="kuang06"><img src="images/kuang06.png"/>
+                <div class="kuang06 js-open-iframe" data-open-level="2" data-open-id="frame2"
+                     data-link="./assets/html2.html">
+                    <img src="images/kuang06.png"/>
                     <div class="gongyi-txt gong06">
                         <img src="images/blue06.png"/>
                         <p class="txt-transform6">动态监测</p>
@@ -300,7 +328,8 @@
                 </div>
             </li>
             <li>
-                <div class="kuang07"><img src="images/kuang07.png"/>
+                <div class="kuang07 js-open-iframe" data-open-level="2" data-open-id="frame1" data-link="https://wapbaike.baidu.com/item/%E7%93%AF%E6%B1%9F%E5%8C%97%E5%8F%A3%E5%A4%A7%E6%A1%A5">
+                    <img src="images/kuang07.png"/>
                     <div class="gongyi-txt gong07">
                         <img src="images/blue07.png" style="margin-top: -1%;"/>
                         <p class="txt-transform7">系统介绍</p>
@@ -323,7 +352,9 @@
     </div>
 </div>
 
-<script src="js/particles.js"></script>
+<!--scripts-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/particles.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/page.js"></script>
 
