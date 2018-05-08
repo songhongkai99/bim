@@ -2,10 +2,18 @@ $(function () {
 
     var $clickAudio = $("#clickAudio"),
         $vIframeBox = $("#vIframeBox"),
-        $mianTankuang = $(".mian-tankuang");
+        $mianTankuang = $(".mian-tankuang"),
+        $closeIframe = $("#closeIframe"),
+        $backButton = $("#backButton");
 
     $mianTankuang.addClass("hidden");
 
+    $closeIframe.on("click", function (e) {
+        $("#domBody").toggleClass("iframe-fullscreen")
+    })
+    $backButton.on("click", function (e) {
+
+    })
     $(".js-open-iframe").on("click", function (e) {
         e.stopPropagation();
         $clickAudio[0].play();
@@ -40,21 +48,29 @@ $(function () {
     })
 
     //20180417 变更 start
-    var initRotate = 0;
+    var initRotate = 0, h;
     $("#clickHover").click(function () {
         initRotate += 90;
         $(this).find('.chi-ibox').css({
             transform: "rotate(" + initRotate + "deg)"
         })
         $(".click-audio")[0].play();
+        var $dom = $(".mian-tankuang.vis-show").find('.back-ground-box');
         if ($(".main-shan").hasClass('opened-nav')) {
+            h = $dom.height();
             $(".main-shan").removeClass("opened-nav");
             $(".faguang-bots").fadeOut(1200);
-            $(".mian-tankuang.vis-show").find('.back-ground').css("height","600px")
+            // $(".mian-tankuang.vis-show").find('.back-ground-box').css("height","600px")
+            $dom.animate({
+                height: '600px'
+            })
         } else {
             $(".main-shan").addClass("opened-nav");
             $(".faguang-bots").fadeIn(1200);
-            $(".mian-tankuang.vis-show").find('.back-ground').removeAttr("style")
+            // $(".mian-tankuang.vis-show").find('.back-ground-box').removeAttr("style")
+            $dom.animate({
+                height: h+"px"
+            })
         }
     })
     //20180417 变更 end

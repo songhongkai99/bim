@@ -81,12 +81,17 @@ canvas {
 }
 
 #bodyScaleDoms{
+    position: relative;
+    height: 100%;
     transform-origin: left top;
     -webkit-transform-origin: left top;
 }
+.iframe-fullscreen #bodyScaleDoms{
+    z-index: 999999;
+}
 #particles-js {
     width: 100%;
-    height: 95%;
+    height: 100%;
 }
 .htmleaf-header {
     color: #fff;
@@ -108,7 +113,7 @@ canvas {
 .mian-tankuang {
     position: absolute;
     width: 100%;
-    top: 15%;
+    top: 12%;
     left: 0%;
     pointer-events: none;
 }
@@ -122,16 +127,20 @@ canvas {
     opacity: 0.5;
     z-index: 8;
 }
-/*视频弹出*/
-.back-ground {
+.back-ground-box{
     position: relative;
-    height: auto;
+    min-height: 300px;
+    height: 100%;
     overflow: hidden;
     overflow-y: auto;
-    background: url(../images/backgrondsss.png) repeat;
     border-radius: 5px;
     text-align: center;
     margin: 0 auto;
+    background: url(../images/backgrondsss.png) repeat;
+}
+/*视频弹出*/
+.back-ground {
+
 }
 .kuang-left {
     position: absolute;
@@ -194,6 +203,13 @@ canvas {
     border: 1px solid #018bd6;
     padding: 15px 15px;
     border-radius: 5px;
+}
+.iframe-fullscreen .kuangicon{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 .yuan01 {
     position: absolute;
@@ -714,7 +730,7 @@ canvas {
     font-size: 1.7rem;
 }
 #popupFrames {
-    height: 300px;
+    height: 100%;
 }
 #popupFrames > iframe {
     position: absolute;
@@ -751,3 +767,23 @@ canvas {
 .mian-tankuang.vis-show{
     z-index: 9999;
 }
+.close-button1{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #1d7db1;
+    color: #fff;
+    white-space: nowrap;
+    padding: 2px 6px;
+    z-index: 9999;
+}
+.back-button1{
+    position: absolute;
+    left: 95px;
+    bottom: 7px;
+    background-color: #1d7db1;
+    color: #fff;
+    white-space: nowrap;
+    padding: 2px 6px;
+}
+

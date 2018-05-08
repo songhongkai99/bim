@@ -33,6 +33,7 @@
     <!--公共内嵌窗口 start-->
     <div class="mian-tankuang vIframe vis-hide" id="vIframeBox">
         <div class="kuangicon">
+            <div class="close-button1" id="closeIframe">全屏控制</div>
             <div class="yuan01"><img src="images/yuansu01.png"/></div>
             <div class="yuan02"><img src="images/yuansu03.png"/></div>
             <div class="yuan03"><img src="images/yuansu11.png"/></div>
@@ -43,10 +44,12 @@
             <div class="yuan08"><img src="images/yuansu13.png"/></div>
             <div class="yuan09"><img src="images/yuansu06.png"/></div>
             <div class="yuan10"><img src="images/yuansu07.png"/></div>
-            <div id="popupFrames" class="back-ground">
-                <iframe class="vis-hide" id="frame1" src="" frameborder="0" allowtransparency="true"></iframe>
-                <iframe class="vis-hide" id="frame2" src="" frameborder="0" allowtransparency="true"></iframe>
-                <iframe class="vis-hide" id="frame3" src="" frameborder="0" allowtransparency="true"></iframe>
+            <div class="back-ground-box">
+                <div id="popupFrames" class="back-ground">
+                    <iframe class="vis-hide" id="frame1" src="" frameborder="0" allowtransparency="true"></iframe>
+                    <iframe class="vis-hide" id="frame2" src="" frameborder="0" allowtransparency="true"></iframe>
+                    <iframe class="vis-hide" id="frame3" src="" frameborder="0" allowtransparency="true"></iframe>
+                </div>
             </div>
         </div>
     </div>
@@ -64,79 +67,81 @@
             <div class="yuan08"><img src="images/yuansu13.png"/></div>
             <div class="yuan09"><img src="images/yuansu06.png"/></div>
             <div class="yuan10"><img src="images/yuansu07.png"/></div>
-            <div class="back-ground back-ground1 clearfix">
-                <ul>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">工点信息</p>
-                            <div class=""></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">工艺工法</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">质量管控</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">工点信息</p>
-                            <div class=""></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">工艺工法</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">质量管控</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <div class="back-ground-box">
+                <div class="back-ground back-ground1 clearfix">
+                    <ul>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">工点信息</p>
+                                <div class=""></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">工艺工法</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">质量管控</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">工点信息</p>
+                                <div class=""></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">工艺工法</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">质量管控</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-            <!--三级菜单-->
-            <div class="back-ground back-ground2 clearfix" style="display:none;">
-                <ul>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">应用平台</p>
-                            <div class=""></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">工艺工法</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">质量管控</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">工点信息</p>
-                            <div class=""></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">工艺工法</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cicle-posiab">
-                            <p class="gong-txt">质量管控</p>
-                        </div>
-                    </li>
-                </ul>
+                <!--三级菜单-->
+                <div class="back-ground back-ground2 clearfix" style="display:none;">
+                    <ul>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">应用平台</p>
+                                <div class=""></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">工艺工法</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">质量管控</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">工点信息</p>
+                                <div class=""></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">工艺工法</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cicle-posiab">
+                                <p class="gong-txt">质量管控</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -154,82 +159,84 @@
             <div class="yuan08"><img src="images/yuansu13.png"/></div>
             <div class="yuan09"><img src="images/yuansu06.png"/></div>
             <div class="yuan10"><img src="images/yuansu07.png"/></div>
-            <div class="back-ground video-play fonttxts clearfix">
-                <ul>
-                    <li>
-                        <!--<div class="btn-playvideo">
-                            <img src="images/videos.png"/>
-                        </div>-->
-                        <p>公路建造</p>
-                        <video class="videok" controls>
-                            <source src="./video/movie.ogg" type="video/mp4">
-                        </video>
-                    </li>
-                    <li>
-                        <!--<div class="btn-playvideo">
-                            <img src="images/videos.png"/>
-                        </div>-->
-                        <p>公路建造</p>
-                        <video class="videok" controls>
-                            <source src="./video/movie.ogg" type="video/mp4">
-                        </video>
-                    </li>
-                    <li>
-                        <!--<div class="btn-playvideo">
-                            <img src="images/videos.png"/>
-                        </div>-->
-                        <p>公路建造</p>
-                        <video class="videok" controls>
-                            <source src="./video/movie.ogg" type="video/mp4">
-                        </video>
-                    </li>
-                    <li>
-                        <!--<div class="btn-playvideo">
-                            <img src="images/videos.png"/>
-                        </div>-->
-                        <p>公路建造</p>
-                        <video class="videok" controls>
-                            <source src="./video/movie.ogg" type="video/mp4">
-                        </video>
-                    </li>
-                    <li>
-                        <!--<div class="btn-playvideo">
-                            <img src="images/videos.png"/>
-                        </div>-->
-                        <p>公路建造</p>
-                        <video class="videok" controls>
-                            <source src="./video/movie.ogg" type="video/mp4">
-                        </video>
-                    </li>
-                    <li>
-                        <!--<div class="btn-playvideo">
-                            <img src="images/videos.png"/>
-                        </div>-->
-                        <p>公路建造</p>
-                        <video class="videok" controls>
-                            <source src="./video/movie.ogg" type="video/mp4">
-                        </video>
-                    </li>
-                    <li>
-                        <!--<div class="btn-playvideo">
-                            <img src="images/videos.png"/>
-                        </div>-->
-                        <p>公路建造</p>
-                        <video class="videok" controls>
-                            <source src="./video/movie.ogg" type="video/mp4">
-                        </video>
-                    </li>
-                    <li>
-                        <!--<div class="btn-playvideo">
-                            <img src="images/videos.png"/>
-                        </div>-->
-                        <p>公路建造</p>
-                        <video class="videok" controls>
-                            <source src="./video/movie.ogg" type="video/mp4">
-                        </video>
-                    </li>
+            <div class="back-ground-box">
+                <div class="back-ground video-play fonttxts clearfix">
+                    <ul>
+                        <li>
+                            <!--<div class="btn-playvideo">
+                                <img src="images/videos.png"/>
+                            </div>-->
+                            <p>公路建造</p>
+                            <video class="videok" controls>
+                                <source src="./video/movie.ogg" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <!--<div class="btn-playvideo">
+                                <img src="images/videos.png"/>
+                            </div>-->
+                            <p>公路建造</p>
+                            <video class="videok" controls>
+                                <source src="./video/movie.ogg" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <!--<div class="btn-playvideo">
+                                <img src="images/videos.png"/>
+                            </div>-->
+                            <p>公路建造</p>
+                            <video class="videok" controls>
+                                <source src="./video/movie.ogg" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <!--<div class="btn-playvideo">
+                                <img src="images/videos.png"/>
+                            </div>-->
+                            <p>公路建造</p>
+                            <video class="videok" controls>
+                                <source src="./video/movie.ogg" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <!--<div class="btn-playvideo">
+                                <img src="images/videos.png"/>
+                            </div>-->
+                            <p>公路建造</p>
+                            <video class="videok" controls>
+                                <source src="./video/movie.ogg" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <!--<div class="btn-playvideo">
+                                <img src="images/videos.png"/>
+                            </div>-->
+                            <p>公路建造</p>
+                            <video class="videok" controls>
+                                <source src="./video/movie.ogg" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <!--<div class="btn-playvideo">
+                                <img src="images/videos.png"/>
+                            </div>-->
+                            <p>公路建造</p>
+                            <video class="videok" controls>
+                                <source src="./video/movie.ogg" type="video/mp4">
+                            </video>
+                        </li>
+                        <li>
+                            <!--<div class="btn-playvideo">
+                                <img src="images/videos.png"/>
+                            </div>-->
+                            <p>公路建造</p>
+                            <video class="videok" controls>
+                                <source src="./video/movie.ogg" type="video/mp4">
+                            </video>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
         <script>
@@ -261,7 +268,6 @@
     </div>
 </div>
 
-<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
 <!--最底部-->
 <div class="nav-bottom" id="navBottom">
     <!--扇形-->
@@ -340,6 +346,7 @@
     </div>
 
     <div style="position:relative;">
+        <div class="back-button1" id="backButton">返回控制</div>
         <img src="images/nav-bottom.png" width="100%"/>
         <!--20180417 变更 start-->
         <div class="click-hover" id="clickHover">
