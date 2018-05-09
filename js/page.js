@@ -1,5 +1,26 @@
 $(function () {
 
+    var backOptions = {
+        shouldBackShow: "shouldBackShow",
+        shouldBackHide: "shouldBackHide"
+    }
+    /**
+     * 增加一个可返回的操作
+     * @param $from 触发元素
+     * @param $target 要显示的元素
+     */
+    function addBackOptions($from, $target) {
+        $("." + backOptions.shouldBackShow).removeClass(backOptions.shouldBackShow);
+        $("." + backOptions.shouldBackHide).removeClass(backOptions.shouldBackHide);
+        $from && $from.addClass(backOptions.shouldBackShow);
+        $target && $target.addClass(backOptions.shouldBackHide);
+    }
+
+    function controlBackOptions() {
+        $("." + backOptions.shouldBackShow).removeClass(backOptions.shouldBackShow).addClass("vis-show");
+        $("." + backOptions.shouldBackHide).removeClass(backOptions.shouldBackHide).removeClass("vis-show");
+    }
+
     var $clickAudio = $("#clickAudio"),
         $vIframeBox = $("#vIframeBox"),
         $mianTankuang = $(".mian-tankuang"),
@@ -12,13 +33,19 @@ $(function () {
         $("#domBody").toggleClass("iframe-fullscreen")
     })
     $backButton.on("click", function (e) {
-
+        var data = $(this).data();
+        controlBackOptions();
     })
     $(".js-open-iframe").on("click", function (e) {
         e.stopPropagation();
         $clickAudio[0].play();
         var data = $(this).data(),
             $openId = $('#' + data.openId);
+        $backButton.data({
+            backFrom: "iframe",
+            backTarget: data.openLevel == 2 ? "home" : "tankuang",
+            backTankuangLevel: data.openLevel
+        });
         $mianTankuang.not("#vIframeBox").removeClass("vis-show");
         $("#vIframeBox").addClass("visible vis-show");
         if(!data.hasRendered){
@@ -27,14 +54,20 @@ $(function () {
         }
         $("#popupFrames").find(">iframe").not($openId).removeClass("vis-show")
         $openId.addClass('vis-show');
+        addBackOptions(null, $("#vIframeBox"));
     })
 
     $(".js-open-tankuang").on("click", function (e) {
         e.stopPropagation();
         $clickAudio[0].play();
         var data = $(this).data();
+        $backButton.data({
+            backFrom: "tankuang",
+            backTarget: "home"
+        });
         $mianTankuang.not("#" + data.openId).removeClass("vis-show");
         $("#" + data.openId).addClass("visible vis-show");
+        addBackOptions(null, $("#" + data.openId))
     })
 
     function controlPageScale() {

@@ -788,5 +788,8 @@ canvas {
     color: #fff;
     white-space: nowrap;
     padding: 2px 6px;
+    z-index: 9;
 }
+.js-open-iframe{}
+.js-open-tankuang{}
 
