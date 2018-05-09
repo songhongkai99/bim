@@ -99,6 +99,7 @@ $(function () {
             $dom.animate({
                 height: '600px'
             })
+            $("#domBody").addClass("shan-nav-closed")
         } else {
             $(".main-shan").addClass("opened-nav");
             $(".faguang-bots").fadeIn(1200);
@@ -110,6 +111,7 @@ $(function () {
                     height: h + "px"
                 })
             }
+            $("#domBody").removeClass("shan-nav-closed")
         }
     })
     //20180417 变更 end
