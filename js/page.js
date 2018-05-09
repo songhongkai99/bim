@@ -47,13 +47,13 @@ $(function () {
             backTankuangLevel: data.openLevel
         });
         $mianTankuang.not("#vIframeBox").removeClass("vis-show");
-        $("#vIframeBox").addClass("visible vis-show");
         if(!data.hasRendered){
             $(this).data('hasRendered', true);
             $openId.attr("src", data.link);
         }
         $("#popupFrames").find(">iframe").not($openId).removeClass("vis-show")
         $openId.addClass('vis-show');
+        $("#vIframeBox").addClass("visible vis-show");
         addBackOptions(null, $("#vIframeBox"));
     })
 
@@ -90,7 +90,9 @@ $(function () {
         $(".click-audio")[0].play();
         var $dom = $(".mian-tankuang.vis-show").find('.back-ground-box');
         if ($(".main-shan").hasClass('opened-nav')) {
-            h = $dom.height();
+            if (!h){
+                h = $dom.height();
+            }
             $(".main-shan").removeClass("opened-nav");
             $(".faguang-bots").fadeOut(1200);
             // $(".mian-tankuang.vis-show").find('.back-ground-box').css("height","600px")
@@ -101,9 +103,13 @@ $(function () {
             $(".main-shan").addClass("opened-nav");
             $(".faguang-bots").fadeIn(1200);
             // $(".mian-tankuang.vis-show").find('.back-ground-box').removeAttr("style")
-            $dom.animate({
-                height: h+"px"
-            })
+            if($dom.length == 0){
+                $('.back-ground-box').removeAttr("style");
+            } else {
+                $dom.animate({
+                    height: h + "px"
+                })
+            }
         }
     })
     //20180417 变更 end
