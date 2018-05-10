@@ -1,5 +1,11 @@
 $(function () {
 
+    var $clickAudio = $("#clickAudio"),
+        $vIframeBox = $("#vIframeBox"),
+        $mianTankuang = $(".mian-tankuang"),
+        $closeIframe = $("#closeIframe"),
+        $backButton = $("#backButton");
+
     var backOptions = {
         shouldBackShow: "shouldBackShow",
         shouldBackHide: "shouldBackHide"
@@ -14,37 +20,63 @@ $(function () {
         $("." + backOptions.shouldBackHide).removeClass(backOptions.shouldBackHide);
         $from && $from.addClass(backOptions.shouldBackShow);
         $target && $target.addClass(backOptions.shouldBackHide);
+        $backButton.removeClass("nothing");
     }
 
     function controlBackOptions() {
+        var data = $backButton.data();
         $("." + backOptions.shouldBackShow).removeClass(backOptions.shouldBackShow).addClass("vis-show");
         $("." + backOptions.shouldBackHide).removeClass(backOptions.shouldBackHide).removeClass("vis-show");
+        if(data.backLevel == 4){
+            var $dom = $(".back-ground.vis-show")
+            addBackOptions($("#" + $dom.data("backId")), $dom);
+            data.backLevel = 3;
+        } else if($(".mian-tankuang.vis-show").length){
+            addBackOptions(null, $(".mian-tankuang.vis-show"))
+        } else {
+            $backButton.addClass("nothing")
+        }
     }
 
-    var $clickAudio = $("#clickAudio"),
-        $vIframeBox = $("#vIframeBox"),
-        $mianTankuang = $(".mian-tankuang"),
-        $closeIframe = $("#closeIframe"),
-        $backButton = $("#backButton");
-
+    //display:none 使得粒子可点击
     $mianTankuang.addClass("hidden");
 
+    //内嵌浏览器全屏控制
     $closeIframe.on("click", function (e) {
         $("#domBody").toggleClass("iframe-fullscreen")
     })
+
+    //全局返回控制按钮
     $backButton.on("click", function (e) {
         var data = $(this).data();
         controlBackOptions();
     })
+
+    //圆形按钮
+    $(".js-open-folder").on("click", function (e) {
+        e.stopPropagation();
+        var data = $(this).data(),
+            $openId = $('#' + data.openId);
+        $backButton.data({
+            backFrom: "folder",
+            backLevel: data.openLevel
+        });
+        $(this).closest(".back-ground").removeClass("vis-show")
+        $openId.addClass('vis-show');
+        addBackOptions($(this).closest(".back-ground"), $openId);
+    })
+
+    //内嵌浏览器
     $(".js-open-iframe").on("click", function (e) {
         e.stopPropagation();
         $clickAudio[0].play();
         var data = $(this).data(),
-            $openId = $('#' + data.openId);
+            $openId = $('#' + data.openId),
+            $back = null;
         $backButton.data({
             backFrom: "iframe",
             backTarget: data.openLevel == 2 ? "home" : "tankuang",
-            backTankuangLevel: data.openLevel
+            backLevel: data.openLevel
         });
         $mianTankuang.not("#vIframeBox").removeClass("vis-show");
         if(!data.hasRendered){
@@ -54,9 +86,14 @@ $(function () {
         $("#popupFrames").find(">iframe").not($openId).removeClass("vis-show")
         $openId.addClass('vis-show');
         $("#vIframeBox").addClass("visible vis-show");
-        addBackOptions(null, $("#vIframeBox"));
+        //是否从圆形文件夹打开
+        if($(this).hasClass("cicle-posiab")){
+            $back = $(this).closest(".mian-tankuang")
+        }
+        addBackOptions($back, $("#vIframeBox"));
     })
 
+    //弧形按钮
     $(".js-open-tankuang").on("click", function (e) {
         e.stopPropagation();
         $clickAudio[0].play();
@@ -70,9 +107,11 @@ $(function () {
         addBackOptions(null, $("#" + data.openId))
     })
 
+    //页面缩放
     function controlPageScale() {
-        var scaleRate = $(window).width() / 1920;
-        $("#navBottom, #bodyScaleDoms").css("transform", 'scale(' + scaleRate + ')');
+        var scalexRate = $(window).width() / 1920,
+            scaleyRate = $(window).height() / 1080;
+        $("#navBottom, #bodyScaleDoms").css("transform", 'scale(' + scalexRate + ', ' + scaleyRate + ')');
     }
     controlPageScale();
 
@@ -150,12 +189,16 @@ $(function () {
         $(this).find(".gong-txt").css("color", "")
     })
     $(".cicle-posiab").click(function () {
-        $(".back-ground1").toggle();
-        $(".back-ground2").toggle();
         $(".click-audio")[0].play();
-        $(".cicle-posiab").animate({left: '2000px'}, 500);
-        $(".cicle-posiab").animate({left: '-2000px'}, 800);
-        $(".cicle-posiab").animate({left: '0px'}, 100);
+        if($(this).hasClass("nothing")){
+            $(this).closest('.back-ground').animate({
+                left: "-120px"
+            }, 60).animate({
+                left: "120px"
+            },120).animate({
+                left: "0px"
+            },60)
+        }
     })
     $(".cicle-posiab").mousedown(function (event) { //获取鼠标按下的位置
         $(this).removeClass("img-hover");
