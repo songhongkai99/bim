@@ -133,7 +133,6 @@ $(function () {
                 h = $dom.height();
             }
             $(".main-shan").removeClass("opened-nav");
-            $(".faguang-bots").fadeOut(1200);
             // $(".mian-tankuang.vis-show").find('.back-ground-box').css("height","600px")
             $dom.animate({
                 height: '600px'
@@ -141,7 +140,6 @@ $(function () {
             $("#domBody").addClass("shan-nav-closed")
         } else {
             $(".main-shan").addClass("opened-nav");
-            $(".faguang-bots").fadeIn(1200);
             // $(".mian-tankuang.vis-show").find('.back-ground-box').removeAttr("style")
             if($dom.length == 0){
                 $('.back-ground-box').removeAttr("style");
@@ -158,20 +156,7 @@ $(function () {
     //20180417 变更 start
     $(window).on("load", function () {
         //控制菜单高度
-        var $mainShan = $('#mainShan'),
-            $firstMainShanLi = $('#firstMainShanLi'),
-            $mainShanLis = $mainShan.find('>ul>li');
-        $mainShan.css({
-            "height": $firstMainShanLi.css('height')
-        })
-        $mainShanLis.each(function () {
-            var width = $(this).width(),
-                height = $(this).height();
-            $(this).css({
-                "width": width,
-                "height": height
-            })
-        })
+        var $mainShan = $('#mainShan');
         setTimeout(function () {
             $mainShan.addClass('opened-nav');
         }, 300)
