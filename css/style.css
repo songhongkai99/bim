@@ -818,3 +818,113 @@ canvas {
 .back-ground.vis-show{
     z-index: 1;
 }
+
+/*照片墙*/
+.photowall{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 501px;
+}
+.photowall .pw-img-box{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10%;
+    height: 33.3%;
+    cursor: pointer;
+    transition: transform 1s;
+}
+.photowall .pw-img-box:hover {
+    transform: scale(1.2);
+}
+.photowall .pw-span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation-play-state: paused;
+}
+.photowall .pw-span.nothing{
+    background: rgba(250,250,250,.1);
+}
+.photowall.animate .pw-span{
+    animation-play-state: running;
+}
+.photowall .pw-img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border: 4px solid rgba(250, 250, 250, .3);
+}
+
+.photowall .pw-img-box:nth-child(3n+1){
+    /*border: 4px solid red;*/
+}
+.photowall .pw-img-box:nth-child(3n+1) .pw-span{
+    transform: scale(.1);
+    opacity: .1;
+    animation: photowalls1 30s linear 1s infinite;
+}
+.photowall .pw-img-box:nth-child(3n+2) {
+    /*border: 4px solid green;*/
+}
+.photowall .pw-img-box:nth-child(3n+2) .pw-span {
+    transform: scale(.4);
+    opacity: .2;
+    animation: photowalls2 20s linear 2s infinite;
+}
+.photowall .pw-img-box:nth-child(3n) {
+    /*border: 4px solid blue;*/
+}
+.photowall .pw-img-box:nth-child(3n) .pw-span {
+    transform: scale(.7);
+    opacity: .5;
+    animation: photowalls3 15s linear 3s infinite;
+}
+
+
+@keyframes photowalls1 {
+    0%{
+        transform: scale(.2);
+        opacity: .1;
+    }
+    90%{
+        transform: scale(.8);
+        opacity: .6;
+    }
+    100%{
+        transform: scale(.8);
+        opacity: 0;
+    }
+}
+@keyframes photowalls2 {
+    0% {
+        transform: scale(.4);
+        opacity: .2;
+    }
+    90% {
+        transform: scale(1);
+        opacity: .9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+@keyframes photowalls3 {
+    0% {
+        transform: scale(.7);
+        opacity: .5;
+    }
+    90% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}

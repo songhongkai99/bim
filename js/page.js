@@ -1,15 +1,18 @@
 $(function () {
 
+    //全局变量
     var $clickAudio = $("#clickAudio"),
         $vIframeBox = $("#vIframeBox"),
         $mianTankuang = $(".mian-tankuang"),
         $closeIframe = $("#closeIframe"),
-        $backButton = $("#backButton");
+        $backButton = $("#backButton"),
+        $photoWall = $("#photoWall");
 
     var backOptions = {
         shouldBackShow: "shouldBackShow",
         shouldBackHide: "shouldBackHide"
-    }
+    };
+
     /**
      * 增加一个可返回的操作
      * @param $from 触发元素
@@ -18,8 +21,8 @@ $(function () {
     function addBackOptions($from, $target) {
         $("." + backOptions.shouldBackShow).removeClass(backOptions.shouldBackShow);
         $("." + backOptions.shouldBackHide).removeClass(backOptions.shouldBackHide);
-        $from && $from.addClass(backOptions.shouldBackShow);
-        $target && $target.addClass(backOptions.shouldBackHide);
+        $from && $from.addClass(backOptions.shouldBackShow).removeClass("vis-show");
+        $target && $target.addClass(backOptions.shouldBackHide).addClass("vis-show");
         $backButton.removeClass("nothing");
     }
 
@@ -32,11 +35,20 @@ $(function () {
             addBackOptions($("#" + $dom.data("backId")), $dom);
             data.backLevel = 3;
         } else if($(".mian-tankuang.vis-show").length){
-            addBackOptions(null, $(".mian-tankuang.vis-show"))
+            addBackOptions($photoWall, $(".mian-tankuang.vis-show"))
         } else {
             $backButton.addClass("nothing")
         }
     }
+
+    //照片墙初始化
+    var $pwSpan = $(".pw-span");
+    $pwSpan.each(function () {
+        $(this).css({
+            animationDelay: Math.random() * 10 + "s"
+        })
+    })
+    $photoWall.addClass("animate")
 
     //display:none 使得粒子可点击
     $mianTankuang.addClass("hidden");
@@ -61,8 +73,9 @@ $(function () {
             backFrom: "folder",
             backLevel: data.openLevel
         });
-        $(this).closest(".back-ground").removeClass("vis-show")
-        $openId.addClass('vis-show');
+        //通过addBackOptiongs统一控制隐藏和显示
+        //$(this).closest(".back-ground").removeClass("vis-show")
+        //$openId.addClass('vis-show');
         addBackOptions($(this).closest(".back-ground"), $openId);
     })
 
@@ -72,7 +85,7 @@ $(function () {
         $clickAudio[0].play();
         var data = $(this).data(),
             $openId = $('#' + data.openId),
-            $back = null;
+            $back = $photoWall;
         $backButton.data({
             backFrom: "iframe",
             backTarget: data.openLevel == 2 ? "home" : "tankuang",
@@ -85,7 +98,7 @@ $(function () {
         }
         $("#popupFrames").find(">iframe").not($openId).removeClass("vis-show")
         $openId.addClass('vis-show');
-        $("#vIframeBox").addClass("visible vis-show");
+        $("#vIframeBox").addClass("visible");
         //是否从圆形文件夹打开
         if($(this).hasClass("cicle-posiab")){
             $back = $(this).closest(".mian-tankuang")
@@ -103,8 +116,8 @@ $(function () {
             backTarget: "home"
         });
         $mianTankuang.not("#" + data.openId).removeClass("vis-show");
-        $("#" + data.openId).addClass("visible vis-show");
-        addBackOptions(null, $("#" + data.openId))
+        $("#" + data.openId).addClass("visible");
+        addBackOptions($photoWall, $("#" + data.openId))
     })
 
     //页面缩放
