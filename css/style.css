@@ -823,9 +823,20 @@ canvas {
 .photowall{
     position: absolute;
     left: 0;
-    top: 100px;
+    top: 110px;
     width: 100%;
     height: 501px;
+    transform: translateY(0px);
+    transition: transform 1s;
+}
+.shan-nav-closed .photowall{
+    transform: translateY(80px);
+}
+.photowall.vis-hide{
+    z-index: -1;
+}
+.photowall.vis-show{
+    z-index: auto;
 }
 .photowall .pw-img-box{
     position: absolute;
