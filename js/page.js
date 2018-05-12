@@ -6,7 +6,8 @@ $(function () {
         $mianTankuang = $(".mian-tankuang"),
         $closeIframe = $("#closeIframe"),
         $backButton = $("#backButton"),
-        $photoWall = $("#photoWall");
+        $photoWall = $("#photoWall"),
+        $mainShan = $("#mainShan");
 
     var backOptions = {
         shouldBackShow: "shouldBackShow",
@@ -52,7 +53,16 @@ $(function () {
 
     //内嵌浏览器全屏控制
     $closeIframe.on("click", function (e) {
-        $("#domBody").toggleClass("iframe-fullscreen")
+        var $dom = $("#domBody");
+        if($dom.hasClass("iframe-fullscreen")){
+            $dom.addClass("iframe-fullscreen-delay");
+            $dom.removeClass("iframe-fullscreen");
+            setTimeout(function () {
+                $dom.removeClass("iframe-fullscreen-delay");
+            },600)
+        } else {
+            $dom.addClass("iframe-fullscreen");
+        }
     })
 
     //全局返回控制按钮
@@ -89,8 +99,7 @@ $(function () {
             backLevel: data.openLevel
         });
         $mianTankuang.not($vIframeBox).removeClass("vis-show");
-        if(!data.hasRendered){
-            $(this).data('hasRendered', true);
+        if($openId.attr("src") == ""){
             $openId.attr("src", data.link);
         }
         $("#popupFrames").find(">iframe").not($openId).removeClass("vis-show")
@@ -137,37 +146,35 @@ $(function () {
         })
         $(".click-audio")[0].play();
         var $dom = $(".mian-tankuang.vis-show").find('.back-ground-box');
-        if ($(".main-shan").hasClass('opened-nav')) {
+        if ($mainShan.hasClass('opened-nav')) {
             if (!h){
                 h = $dom.height();
             }
-            $(".main-shan").removeClass("opened-nav");
-            // $(".mian-tankuang.vis-show").find('.back-ground-box').css("height","600px")
-            $dom.animate({
-                height: '600px'
-            })
-            $("#domBody").addClass("shan-nav-closed")
+            $mainShan.removeClass("opened-nav");
+            // $dom.animate({
+            //     height: '600px'
+            // })
+            $("#domBody").addClass("shan-nav-closed").removeClass("shan-nav-opened")
         } else {
-            $(".main-shan").addClass("opened-nav");
-            // $(".mian-tankuang.vis-show").find('.back-ground-box').removeAttr("style")
-            if($dom.length == 0){
-                $('.back-ground-box').removeAttr("style");
-            } else {
-                $dom.animate({
-                    height: h + "px"
-                })
-            }
-            $("#domBody").removeClass("shan-nav-closed")
+            $mainShan.addClass("opened-nav");
+            // if($dom.length == 0){
+            //     $('.back-ground-box').removeAttr("style");
+            // } else {
+            //     $dom.animate({
+            //         height: h + "px"
+            //     })
+            // }
+            $("#domBody").removeClass("shan-nav-closed").addClass("shan-nav-opened")
         }
     })
     //20180417 变更 end
 
     //20180417 变更 start
     $(window).on("load", function () {
-        //控制菜单高度
-        var $mainShan = $('#mainShan');
+        //初始化扇形按钮
         setTimeout(function () {
             $mainShan.addClass('opened-nav');
+            $("#domBody").addClass("shan-nav-opened");
         }, 300)
     })
     //20180417 变更 end
