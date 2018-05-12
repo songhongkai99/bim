@@ -50,9 +50,6 @@ $(function () {
     })
     $photoWall.addClass("animate")
 
-    //display:none 使得粒子可点击
-    $mianTankuang.addClass("hidden");
-
     //内嵌浏览器全屏控制
     $closeIframe.on("click", function (e) {
         $("#domBody").toggleClass("iframe-fullscreen")
@@ -91,33 +88,32 @@ $(function () {
             backTarget: data.openLevel == 2 ? "home" : "tankuang",
             backLevel: data.openLevel
         });
-        $mianTankuang.not("#vIframeBox").removeClass("vis-show");
+        $mianTankuang.not($vIframeBox).removeClass("vis-show");
         if(!data.hasRendered){
             $(this).data('hasRendered', true);
             $openId.attr("src", data.link);
         }
         $("#popupFrames").find(">iframe").not($openId).removeClass("vis-show")
         $openId.addClass('vis-show');
-        $("#vIframeBox").addClass("visible");
         //是否从圆形文件夹打开
         if($(this).hasClass("cicle-posiab")){
             $back = $(this).closest(".mian-tankuang")
         }
-        addBackOptions($back, $("#vIframeBox"));
+        addBackOptions($back, $vIframeBox);
     })
 
     //弧形按钮
     $(".js-open-tankuang").on("click", function (e) {
         e.stopPropagation();
         $clickAudio[0].play();
-        var data = $(this).data();
+        var data = $(this).data(),
+            $openId = $("#" + data.openId);
         $backButton.data({
             backFrom: "tankuang",
             backTarget: "home"
         });
-        $mianTankuang.not("#" + data.openId).removeClass("vis-show");
-        $("#" + data.openId).addClass("visible");
-        addBackOptions($photoWall, $("#" + data.openId))
+        $mianTankuang.not($openId).removeClass("vis-show");
+        addBackOptions($photoWall, $openId)
     })
 
     //页面缩放

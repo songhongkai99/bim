@@ -12,7 +12,7 @@
 html, body {
     position: relative;
     width: 1920px;
-    height: 1080px;
+    height: 100%;
     background: url(../images/in_top_bj.jpg) repeat;
     overflow: hidden;
 }
@@ -387,13 +387,13 @@ canvas {
     transform: scale(0.1);
     pointer-events: none;
     transform-origin: 50% 76%;
-    /*outline: 1px solid red;*/
+    outline: 1px solid red;
 }
 .main-shan.opened-nav {
     opacity: 1;
-    -webkit-transition: all .8s ease;
-    -moz-transition: all .8s ease;
-    transition: all .8s ease;
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    transition: all .6s ease;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -404,9 +404,9 @@ canvas {
     position: absolute;
 
     opacity: 0;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: all .9s linear;
+    -moz-transition: all .9s linear;
+    transition: all .9s linear;
 
     -webkit-transform-origin: 100% 100%;
     -moz-transform-origin: 100% 100%;
@@ -444,6 +444,9 @@ canvas {
     background: url(../images/new/left2.png);
     z-index: 2;
     transform: translate(524px, -6px);
+    -webkit-transition: all .6s linear .3s;
+    -moz-transition: all .6s linear .3s;
+    transition: all .6s linear .3s;
 }
 .main-shan ul li:nth-child(4) {
     left: 544px;
@@ -453,6 +456,9 @@ canvas {
     background: url(../images/new/left3.png);
     z-index: 3;
     transform: translate(254px, 5px);
+    -webkit-transition: all .3s linear .6s;
+    -moz-transition: all .3s linear .6s;
+    transition: all .3s linear .6s;
 }
 .main-shan ul li:nth-child(5) {
     left: 817px;
@@ -471,6 +477,9 @@ canvas {
     background: url(../images/new/left5.png);
     z-index: 3;
     transform: translate(-264px, 5px);
+    -webkit-transition: all .3s linear .6s;
+    -moz-transition: all .3s linear .6s;
+    transition: all .3s linear .6s;
 }
 .main-shan ul li:nth-child(7) {
     left: 1352px;
@@ -480,6 +489,9 @@ canvas {
     background: url(../images/new/left6.png);
     z-index: 2;
     transform: translate(-536px, -6px);
+    -webkit-transition: all .6s linear .3s;
+    -moz-transition: all .6s linear .3s;
+    transition: all .6s linear .3s;
 }
 .main-shan ul li:nth-child(8) {
     left: 1615px;
@@ -502,9 +514,9 @@ canvas {
 }
 .main-shan.opened-nav ul li {
     opacity: 1;
-    -webkit-transition: all 1s ease .8s;
-    -moz-transition: all 1s ease .8s;
-    transition: all 1s ease .8s;
+    -webkit-transition: all .9s linear .6s;
+    -moz-transition: all .9s linear .6s;
+    transition: all .9s linear .6s;
     transform: translate(0px, 0px) !important;
 }
 .main-shan.opened-nav ul li:nth-child(1) {
@@ -514,19 +526,27 @@ canvas {
 
 }
 .main-shan.opened-nav ul li:nth-child(3) {
-
+    -webkit-transition: all .6s linear .6s;
+    -moz-transition: all .6s linear .6s;
+    transition: all .6s linear .6s;
 }
 .main-shan.opened-nav ul li:nth-child(4) {
-
+    -webkit-transition: all .3s linear .6s;
+    -moz-transition: all .3s linear .6s;
+    transition: all .3s linear .6s;
 }
 .main-shan.opened-nav ul li:nth-child(5) {
 
 }
 .main-shan.opened-nav ul li:nth-child(6) {
-
+    -webkit-transition: all .3s linear .6s;
+    -moz-transition: all .3s linear .6s;
+    transition: all .3s linear .6s;
 }
 .main-shan.opened-nav ul li:nth-child(7) {
-
+    -webkit-transition: all .6s linear .6s;
+    -moz-transition: all .6s linear .6s;
+    transition: all .6s linear .6s;
 }
 .main-shan.opened-nav ul li:nth-child(8) {
 
