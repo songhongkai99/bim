@@ -32,7 +32,7 @@ $(function () {
         $("." + backOptions.shouldBackShow).removeClass(backOptions.shouldBackShow).addClass("vis-show");
         $("." + backOptions.shouldBackHide).removeClass(backOptions.shouldBackHide).removeClass("vis-show");
         if(data.backLevel == 4){
-            var $dom = $(".back-ground.vis-show")
+            var $dom = $(".back-ground.vis-show", $(".mian-tankuang.vis-show"))
             addBackOptions($("#" + $dom.data("backId")), $dom);
             data.backLevel = 3;
         } else if($(".mian-tankuang.vis-show").length){
@@ -50,6 +50,20 @@ $(function () {
         })
     })
     $photoWall.addClass("animate")
+    $pwSpan.on("click", function (e) {
+        e.stopPropagation();
+        if($(this).hasClass("nothing")){
+            return
+        }
+        $('#domBody').addClass("photowall-img-max");
+        $("#photowallMax").addClass("vis-show")
+        $("#pwmImg").attr('src', $(this).find(".pw-img:first").attr("src"))
+    })
+    $(window).on("click",function (e) {
+        $('#domBody').removeClass("photowall-img-max")
+        $("#photowallMax").removeClass("vis-show")
+        $("#pwmImg").attr("src", "")
+    })
 
     //内嵌浏览器全屏控制
     $closeIframe.on("click", function (e) {
@@ -98,6 +112,10 @@ $(function () {
             backTarget: data.openLevel == 2 ? "home" : "tankuang",
             backLevel: data.openLevel
         });
+        if($vIframeBox.hasClass("vis-show") && $openId.hasClass("vis-show")){
+            $backButton.click();
+            return;
+        }
         $mianTankuang.not($vIframeBox).removeClass("vis-show");
         if($openId.attr("src") == ""){
             $openId.attr("src", data.link);
@@ -121,7 +139,23 @@ $(function () {
             backFrom: "tankuang",
             backTarget: "home"
         });
+        if($vIframeBox.hasClass("vis-show") && $(this).hasClass("selected-now")){
+            $backButton.click();
+            return;
+        }
+        if($openId.hasClass("vis-show")){
+            $openId.removeClass("vis-show");
+            $photoWall.addClass("vis-show");
+            return;
+        }
         $mianTankuang.not($openId).removeClass("vis-show");
+        var $bgdom = $(".back-ground.vis-show", $openId);
+        if(!!$bgdom.data("backId")){
+            addBackOptions($("#" + $bgdom.data("backId")), $bgdom);
+            $photoWall.removeClass("vis-show");
+            $openId.addClass("vis-show");
+            return;
+        }
         addBackOptions($photoWall, $openId)
     })
 
@@ -213,82 +247,18 @@ $(function () {
     })
 
 
+    //背景音乐
     $(".backgroud-audio")[0].play();
-//
-    $(".kuang01").hover(function () {
-        $(this).find("img").first().attr("src", "images/kuang-hover01.png");
-        $(this).find("img").last().attr("src", "images/wirte01.png");
-        $(this).find(".gongyi-txt").css("color", "#fff");
-    }, function () {
-        $(this).find("img").first().attr("src", "images/kuang01.png");
-        $(this).find("img").last().attr("src", "images/blue01.png");
-        $(this).find(".gongyi-txt").css("color", "");
-    })
-    $(".kuang02").hover(function () {
-        $(this).find("img").first().attr("src", "images/kuang-hover02.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover01_2.png");
-        $(this).find("img").last().attr("src", "images/wirte02.png");
-        $(this).find(".gongyi-txt").css("color", "#fff");
-    }, function () {
-        $(this).find("img").first().attr("src", "images/kuang02.png")
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang01.png");
-        $(this).find("img").last().attr("src", "images/blue02.png");
-        $(this).find(".gongyi-txt").css("color", "");
-    })
-    $(".kuang03").hover(function () {
-        $(this).find("img").first().attr("src", "images/kuang-hover03.png")
-        $(this).find("img").last().attr("src", "images/wirte03.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover02_2.png");
-        $(this).find(".gongyi-txt").css("color", "#fff");
-    }, function () {
-        $(this).find("img").first().attr("src", "images/kuang03.png")
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang02.png");
-        $(this).find("img").last().attr("src", "images/blue03.png");
-        $(this).find(".gongyi-txt").css("color", "");
-    })
-    $(".kuang04").hover(function () {
-        $(this).find("img").first().attr("src", "images/kuang-hover04.png")
-        $(this).find("img").last().attr("src", "images/wirte04.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover03_2.png");
-        $(this).find(".gongyi-txt").css("color", "#fff");
-    }, function () {
-        $(this).find("img").first().attr("src", "images/kuang04.png")
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang03.png");
-        $(this).find("img").last().attr("src", "images/blue04.png");
-        $(this).find(".gongyi-txt").css("color", "");
-    })
-    $(".kuang05").hover(function () {
-        $(this).find("img").first().attr("src", "images/kuang-hover05.png")
-        $(this).find("img").last().attr("src", "images/wirte05.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover04_2.png");
-        $(this).find(".gongyi-txt").css("color", "#fff");
-    }, function () {
-        $(this).find("img").first().attr("src", "images/kuang05.png")
-        $(this).find("img").last().attr("src", "images/blue05.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang04.png");
-        $(this).find(".gongyi-txt").css("color", "");
-    })
-    $(".kuang06").hover(function () {
-        $(this).find("img").first().attr("src", "images/kuang-hover06.png");
-        $(this).find("img").last().attr("src", "images/wirte06.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover05_2.png");
-        $(this).find(".gongyi-txt").css("color", "#fff");
-    }, function () {
-        $(this).find("img").first().attr("src", "images/kuang06.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang05.png");
-        $(this).find(".gongyi-txt").css("color", "");
-        $(this).find("img").last().attr("src", "images/blue06.png");
-    })
-    $(".kuang07").hover(function () {
-        $(this).find("img").first().attr("src", "images/kuang-hover07.png");
-        $(this).find("img").last().attr("src", "images/wirte07.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang-hover06_2.png");
-        $(this).find(".gongyi-txt").css("color", "#fff");
-    }, function () {
-        $(this).find("img").first().attr("src", "images/kuang07.png");
-        $(this).parent().prev().find("img").first().attr("src", "images/kuang06.png");
-        $(this).find("img").last().attr("src", "images/blue07.png");
-        $(this).find(".gongyi-txt").css("color", "");
-    })
+
+    var $kuang = $(".kuang");
+    $kuang.on("click", function (e) {
+        e.stopPropagation();
+        $kuang.removeClass("selected-now")
+        $(this).addClass("selected-now")
+    }).hover(function () {
+            $(this).addClass("active")
+        }, function () {
+            $(this).removeClass("active")
+        })
 })
 
