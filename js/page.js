@@ -82,6 +82,9 @@ $(function () {
     //全局返回控制按钮
     $backButton.on("click", function (e) {
         var data = $(this).data();
+        if($(this).hasClass("nothing")){
+            return;
+        }
         controlBackOptions();
     })
 
@@ -144,6 +147,7 @@ $(function () {
             return;
         }
         if($openId.hasClass("vis-show")){
+            $backButton.addClass("nothing");
             $openId.removeClass("vis-show");
             $photoWall.addClass("vis-show");
             return;
