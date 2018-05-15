@@ -13,113 +13,138 @@
             background: transparent;
             overflow: hidden;
         }
+        .photowall.animate .photowall-inner {
+            animation: photowallinner 15s;
+            animation-fill-mode: forwards;
+        }
     </style>
 </head>
-<body>
-
+<body id="domBody">
+<div class="photowall-max vis-hide" id="photowallMax">
+    <div class="inner">
+        <img id="pwmImg" src="" alt="">
+    </div>
+</div>
 <div class="photowall" id="photoWall">
-    <div class="pw-img-box" style="left: 1%;top: 1%;">
-        <span class="pw-span pw01"><img class="pw-img" src="./images/2.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 10%;top: 10%;">
-        <span class="pw-span pw02 nothing"></span>
-    </div>
-    <div class="pw-img-box" style="left: 17%;top: 4%;">
-        <span class="pw-span pw03"><img class="pw-img" src="./images/1.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 50%;top: 15%;">
-        <span class="pw-span pw04 nothing"></span>
-    </div>
-    <div class="pw-img-box" style="left: 36%;top: 1%;">
-        <span class="pw-span pw05"><img class="pw-img" src="./images/6.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 82%;top: 65%;">
-        <span class="pw-span pw06"><img class="pw-img" src="./images/1.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 30%;top: 26%;">
-        <span class="pw-span pw07 nothing"></span>
-    </div>
-    <div class="pw-img-box" style="left: 44%;top: 50%;">
-        <span class="pw-span pw08"><img class="pw-img" src="./images/2.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 0%;top: 60%;">
-        <span class="pw-span pw09 nothing"></span>
-    </div>
-    <div class="pw-img-box" style="left: 16%;top: 44%;">
-        <span class="pw-span pw10 nothing"></span>
-    </div>
-    <div class="pw-img-box" style="left: 70%;top: 12%;">
-        <span class="pw-span pw11"><img class="pw-img" src="./images/5.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 60%;top: 55%;">
-        <span class="pw-span pw12"><img class="pw-img" src="./images/2.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 8%;top: 66%;">
-        <span class="pw-span pw13"><img class="pw-img" src="./images/3.jpeg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 66%;top: 66%;">
-        <span class="pw-span pw14"><img class="pw-img" src="./images/8.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 88%;top: 1%;">
-        <span class="pw-span pw15"><img class="pw-img" src="./images/6.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 77%;top: 66%;">
-        <span class="pw-span pw16 nothing"></span>
-    </div>
-    <div class="pw-img-box" style="left: 86%;top: 16%;">
-        <span class="pw-span pw17"><img class="pw-img" src="./images/5.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 28%;top: 66%;">
-        <span class="pw-span pw18"><img class="pw-img" src="./images/1.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 20%;top: 55%;">
-        <span class="pw-span pw19"><img class="pw-img" src="./images/2.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 58%;top: 23%;">
-        <span class="pw-span pw20"><img class="pw-img" src="./images/3.jpeg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 67%;top: 5%;">
-        <span class="pw-span pw21"><img class="pw-img" src="./images/1.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 74%;top: 46%;">
-        <span class="pw-span pw22 nothing"></span>
-    </div>
-    <div class="pw-img-box" style="left: 0%;top: 33%;">
-        <span class="pw-span pw23"><img class="pw-img" src="./images/8.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 88%;top: 53%;">
-        <span class="pw-span pw24"><img class="pw-img" src="./images/1.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 36%;top: 51%;">
-        <span class="pw-span pw25"><img class="pw-img" src="./images/3.jpeg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 40%;top: 30%;">
-        <span class="pw-span pw26"><img class="pw-img" src="./images/4.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 12%;top: 26%;">
-        <span class="pw-span pw27"><img class="pw-img" src="./images/8.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 50%;top: 74%;">
-        <span class="pw-span pw28"><img class="pw-img" src="./images/2.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 79%;top: 3%;">
-        <span class="pw-span pw29"><img class="pw-img" src="./images/1.jpg" alt=""></span>
-    </div>
-    <div class="pw-img-box" style="left: 54%;top: 2%;">
-        <span class="pw-span pw30 nothing"></span>
+    <div class="photowall-inner">
+        <div class="pw-img-box" style="left: 1%;top: 1%;">
+            <span class="pw-span pw01"><img class="pw-img" src="./images/2.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 10%;top: 10%;">
+            <span class="pw-span pw02 nothing"></span>
+        </div>
+        <div class="pw-img-box" style="left: 17%;top: 4%;">
+            <span class="pw-span pw03"><img class="pw-img" src="./images/1.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 50%;top: 15%;">
+            <span class="pw-span pw04 nothing"></span>
+        </div>
+        <div class="pw-img-box" style="left: 36%;top: 1%;">
+            <span class="pw-span pw05"><img class="pw-img" src="./images/6.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 82%;top: 65%;">
+            <span class="pw-span pw06"><img class="pw-img" src="./images/1.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 30%;top: 26%;">
+            <span class="pw-span pw07 nothing"></span>
+        </div>
+        <div class="pw-img-box" style="left: 44%;top: 50%;">
+            <span class="pw-span pw08"><img class="pw-img" src="./images/2.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 0%;top: 60%;">
+            <span class="pw-span pw09 nothing"></span>
+        </div>
+        <div class="pw-img-box" style="left: 16%;top: 44%;">
+            <span class="pw-span pw10 nothing"></span>
+        </div>
+        <div class="pw-img-box" style="left: 70%;top: 12%;">
+            <span class="pw-span pw11"><img class="pw-img" src="./images/5.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 60%;top: 55%;">
+            <span class="pw-span pw12"><img class="pw-img" src="./images/2.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 8%;top: 66%;">
+            <span class="pw-span pw13"><img class="pw-img" src="./images/3.jpeg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 66%;top: 66%;">
+            <span class="pw-span pw14"><img class="pw-img" src="./images/8.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 88%;top: 1%;">
+            <span class="pw-span pw15"><img class="pw-img" src="./images/6.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 77%;top: 66%;">
+            <span class="pw-span pw16 nothing"></span>
+        </div>
+        <div class="pw-img-box" style="left: 86%;top: 16%;">
+            <span class="pw-span pw17"><img class="pw-img" src="./images/5.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 28%;top: 66%;">
+            <span class="pw-span pw18"><img class="pw-img" src="./images/1.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 20%;top: 55%;">
+            <span class="pw-span pw19"><img class="pw-img" src="./images/2.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 58%;top: 23%;">
+            <span class="pw-span pw20"><img class="pw-img" src="./images/3.jpeg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 67%;top: 5%;">
+            <span class="pw-span pw21"><img class="pw-img" src="./images/1.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 74%;top: 46%;">
+            <span class="pw-span pw22 nothing"></span>
+        </div>
+        <div class="pw-img-box" style="left: 0%;top: 33%;">
+            <span class="pw-span pw23"><img class="pw-img" src="./images/8.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 88%;top: 53%;">
+            <span class="pw-span pw24"><img class="pw-img" src="./images/1.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 36%;top: 51%;">
+            <span class="pw-span pw25"><img class="pw-img" src="./images/3.jpeg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 40%;top: 30%;">
+            <span class="pw-span pw26"><img class="pw-img" src="./images/4.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 12%;top: 26%;">
+            <span class="pw-span pw27"><img class="pw-img" src="./images/8.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 50%;top: 74%;">
+            <span class="pw-span pw28"><img class="pw-img" src="./images/2.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 79%;top: 3%;">
+            <span class="pw-span pw29"><img class="pw-img" src="./images/1.jpg" alt=""></span>
+        </div>
+        <div class="pw-img-box" style="left: 54%;top: 2%;">
+            <span class="pw-span pw30 nothing"></span>
+        </div>
     </div>
 </div>
 
 <script src="../js/jquery.min.js"></script>
 <script>
     $(function () {
-        var $dom = $(".pw-span");
-        $dom.each(function () {
+        var $pwSpan = $(".pw-span");
+        $pwSpan.each(function () {
             $(this).css({
                 animationDelay: Math.random()*10 + "s"
             })
         })
         $("#photoWall").addClass("animate")
+
+        $pwSpan.on("click", function (e) {
+            e.stopPropagation();
+            if ($(this).hasClass("nothing")) {
+                return
+            }
+            $('#domBody').addClass("photowall-img-max");
+            $("#photowallMax").addClass("vis-show")
+            $("#pwmImg").attr('src', $(this).find(".pw-img:first").attr("src"))
+        })
+        $(window).on("click", function (e) {
+            $('#domBody').removeClass("photowall-img-max")
+            $("#photowallMax").removeClass("vis-show")
+            $("#pwmImg").attr("src", "")
+        })
     })
 </script>
 </body>
