@@ -2,12 +2,31 @@ $(function () {
 
     //全局变量
     var $clickAudio = $("#clickAudio"),
+        $bgAudio = $("#backgroundAudio"),
+        $pptIfshow = $(".ppt-ifshow"),
         $vIframeBox = $("#vIframeBox"),
         $mianTankuang = $(".mian-tankuang"),
         $closeIframe = $("#closeIframe"),
         $backButton = $("#backButton"),
         $photoWall = $("#photoWall"),
         $mainShan = $("#mainShan");
+
+    //全局控制背景音乐
+    var hasPPTshow = false;
+    setInterval(function () {
+        $pptIfshow.each(function () {
+            if ($(this).hasClass("vis-show") && $vIframeBox.hasClass("vis-show")) {
+                hasPPTshow = true;
+                return false;
+            }
+        })
+        if(hasPPTshow){
+            $bgAudio[0].pause();
+            hasPPTshow = false;
+        } else {
+            $bgAudio[0].play();
+        }
+    }, 1600)
 
     var backOptions = {
         shouldBackShow: "shouldBackShow",
@@ -249,10 +268,6 @@ $(function () {
         $(this).find(".gong-txt").addClass("txt-hover")
         $(this).removeClass("select-hover");
     })
-
-
-    //背景音乐
-    $(".backgroud-audio")[0].play();
 
     var $kuang = $(".kuang");
     $kuang.on("click", function (e) {
